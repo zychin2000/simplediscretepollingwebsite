@@ -29,8 +29,8 @@
     <!-- Header -->
     <header class="pt2 pb1 align--center">
         <div class="container">
-            <p>Welcome to</p>
-            <h1 title="Camp Chippewa"><img class="logo" src="{% static '/img/logo.svg' %}" alt="Camp Chippewa"></h1>
+            <p>Welcome to {{ currentcoral }}</p>
+            <h1 title="Camp Chippewa"><img class="logo" src="{{ currentcoral.coral_image.url }}" alt="Camp Chippewa"></h1>
         </div>
     </header>
 

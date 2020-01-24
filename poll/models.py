@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Coral(models.Model):
-    coral_image = models.ImageField(upload_to='corals')
+    coral_image = models.ImageField(upload_to='media')
     comments = models.CharField(max_length=1000)
     #uploader = models.ForeignKey(User, on_delete=models.CASCADE)
 

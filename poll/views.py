@@ -14,6 +14,5 @@ def index(request):
     currentcoral = get_random_coral()
     #Retrieve a random coral from the model
 
-    print(currentcoral)
-    context = {}
+    context = {'currentcoral': currentcoral}
     return HttpResponse(template.render(context, request))
