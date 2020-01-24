@@ -29,8 +29,8 @@
     <!-- Header -->
     <header class="pt2 pb1 align--center">
         <div class="container">
-            <p>Welcome to {{ currentcoral }}</p>
-            <h1 title="Camp Chippewa"><img class="logo" src="{{ currentcoral.coral_image.url }}" alt="Camp Chippewa"></h1>
+            <p>Welcome to </p>
+            <h1 title="title"><img class="logo" src="{% static '/img/logo.svg' %}" alt="Coral Health ML Training Submissions"></h1>
         </div>
     </header>
 
@@ -44,14 +44,20 @@
                 <!-- Cabin -->
                 <div class="grid-column span-half pt3 pb3 mobile-m order-1">
                     <div class="relative">
-                        <img class="info-image relative z2" src="{% static '/img/cabin.jpg '%}" alt="Cabin">
-                        <div class="pattern pattern--left-down absolute z1"></div>
+                        <img class="info-image relative z2" src="{{ currentcoral.coral_image.url }}" alt="cabin">
+
                     </div>
                 </div>
                 <div class="grid-column span-half pt3 pb3 mobile-m order-2">
-                    <h3>Cabin</h3>
-                    <p>Illa argumenta propria videamus, cur omnia sint paria peccata. Quamquam te quidem video minime esse deterritum. Beatus sibi videtur esse moriens. In qua quid est boni praeter summam&nbsp;voluptatem.</p>
+                    <h3>Look at the picture. Is it healthy?</h3>
+                    {% if currentcoral.comments %}
+                    <p>Image Comments: {{ currentcoral.comments }}</p>
+                    {% endif %}
+
+                <input type="button" value="Yay!" onclick="msg()">
+                <input type="button" value="Nay!" onclick="msg()">
                 </div>
+                {% comment %}
                 <!-- Teepees -->
                 <div class="grid-column span-half pt3 pb3 mobile-m order-4">
                     <h3>Teepees</h3>
@@ -95,12 +101,12 @@
                 <div class="grid-column span-half pt3 pb3 mobile-m order-10">
                     <h3>Canoeing</h3>
                     <p>Nam si propter voluptatem, quae est ista laus, quae possit e macello peti? Sin te auctoritas commovebat, nobisne omnibus et Platoni ipsi nescio quem illum&nbsp;anteponebas.</p>
-                </div>
+                </div>{% endcomment %}
             </section>
 
         </div>
 
-        <!-- Pricing -->
+        {% comment %}<!-- Pricing -->
         <section class="align--center pt2 pb3">
             <p class="h2">Rent the whole place for $3,670/night.</p>
             <p>Maximum of 40 people.</p>
@@ -133,21 +139,21 @@
                     </div>
                 </form>
             </div>
-        </section>
+        </section>{% endcomment %}
         
     </main>
 
     <!-- Footer -->
     <footer class="pt2 pb2">
         <div class="container align--center">
-            <p>W5723 Lake View Chester, CA 96020</p>
+            <p></p>
             <p>Design by <a href="https://www.eatapapaya.com" class="link">Papaya.</a></p>
-            <ul class="no-bullets list--inline mt1">
+            {% comment %}<ul class="no-bullets list--inline mt1">
                 <li class="mr1"><a href="https://www.facebook.com" class="link"><img class="icon" src="/img/facebook.svg" alt="Facebook"></a></li>
                 <li class="mr1"><a href="https://www.twitter.com" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
                 <li><a href="https://www.instagram.com" class="link"><img class="icon" src="/img/instagram.svg" alt="Instagram"></a></li>
             </ul>
-            <p>&copy; Camp Chippewa</p>
+            <p>&copy; Camp Chippewa</p>{% endcomment %}
         </div>
     </footer>
 
