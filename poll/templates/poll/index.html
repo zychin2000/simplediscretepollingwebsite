@@ -30,7 +30,7 @@
     <header class="pt2 pb1 align--center">
         <div class="container">
             <p>Welcome to </p>
-            <h1 title="title"><img class="logo" src="{% static '/img/logo.svg' %}" alt="Coral Health ML Training Submissions"></h1>
+            <h1 title="title">Coral Health ML Training Submissions</h1>
         </div>
     </header>
 
@@ -54,8 +54,17 @@
                     <p>Image Comments: {{ currentcoral.comments }}</p>
                     {% endif %}
 
-                <input type="button" value="Yay!" onclick="msg()">
-                <input type="button" value="Nay!" onclick="msg()">
+
+                    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+                    <form action="vote" method="post">
+                        {% csrf_token %}
+
+                        <input type="hidden" name="current_coral_id" value="{{ currentcoral.id }}">
+                        <input type="submit" name="submitbutton" value="Yay!">
+                        <input type="submit" name="submitbutton" value="Nay!">
+                    </form>
+
                 </div>
                 {% comment %}
                 <!-- Teepees -->
